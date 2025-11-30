@@ -2,7 +2,7 @@
 # 🤖 LALM을 이용한 한/영 Audio Annotation 벤치마크 개발
 
 <div align="center">
-  <h2>🇰🇷🇺🇸 K-E Audio Benchmark Project</h2>
+  <h2 K-E Audio Benchmark Project</h2>
   <p><strong>LALM과 LLM을 결합한 고품질 오디오 캡션 자동 생성 및 벤치마크 구축</strong></p>
 </div>
 
