@@ -17,11 +17,11 @@
 ## 🔍 프로젝트 소개
 
 ### 📌 개요 및 배경
-오디오 인공지능 연구에서 대규모 데이터셋은 필수적이지만, Ground Truth(GT)를 사람이 직접 작성하는 과정은 막대한 비용과 시간이 소요됩니다. 특히, 기존 벤치마크는 대부분 영어 중심으로 구성되어 있어 **한국어 벤치마크는 전무한 실정**입니다. 
+오디오 인공지능 연구에서 대규모 데이터셋은 필수적이지만, Ground Truth(GT)를 사람이 직접 작성하는 과정은 막대한 비용과 시간이 소요됩니다. 특히, 기존 벤치마크는 대부분 영어 중심으로 구성되어 있어 한국어 벤치마크는 전무한 실정입니다. 
 
-본 프로젝트는 이러한 한계를 극복하기 위해 **LALM(Large Audio-Language Model)**과 **LLM**을 결합하여, 사람의 개입(후처리)을 최소화하면서도 고품질의 **한/영 병행 오디오 캡션(GT)을 자동으로 생성하는 파이프라인**을 개발하였습니다. 
+본 프로젝트는 이러한 한계를 극복하기 위해 LALM(Large Audio-Language Model)과 LLM을 결합하여, 사람의 개입(후처리)을 최소화하면서도 고품질의 한/영 병행 오디오 캡션(GT)을 자동으로 생성하는 파이프라인을 개발하였습니다. 
 
-나아가, **CLAIR-A(LLM 기반 평가), MACE, KoBERT 등 한/영에 대한 다양한 평가지표를 도입**하여, 구축된 데이터를 기반으로 **AF3를 비롯한 타 ALM(Audio-Language Model)의 성능을 정량적으로 측정하고 분석할 수 있는 한/영 벤치마크를 완성**하였습니다.
+나아가, CLAIR-A(LLM 기반 평가), MACE, KoBERT 등 한/영에 대한 다양한 평가지표를 도입하여, 구축된 데이터를 기반으로 AF3를 비롯한 타 ALM(Audio-Language Model)의 성능을 정량적으로 측정하고 분석할 수 있는 한/영 벤치마크를 완성하였습니다.
 
 ### 🎯 목표
 1. **자동화된 GT 구축:** AF3(Audio Flamingo 3)와 GPT-4o를 연동하여 고비용의 수작업 라벨링 대체
@@ -36,7 +36,7 @@
 |:---:|---|---|
 | **Main Pipeline** | **GT 생성 파이프라인 & 시연 시스템**<br>AF3 생성 → MACE 필터링 → GPT 번역의 전 과정을 수행하는 메인 코드 및 시연 시스템 | [🔗 Auto-GT-Pipeline-Demo](https://github.com/SogangCapstone10/Auto-GT-Pipeline-Demo) |
 | **LALM** | **Audio Flamingo 3 (AF3)**<br>오디오 입력을 받아 1차 영어 캡션을 생성하는 핵심 모델 | [🔗 audio-flamingo](https://github.com/SogangCapstone10/audio-flamingo) |
-| **Eng Metric & Filter** | **AAC Metrics (English)**<br>Sentence-BERT, SPIDEr-FL, FENSE 등의 영어 평가지표 모음.<br>그 중 **MACE**는 본 프로젝트의 **필터링 모듈** 핵심 알고리즘으로 응용 | [🔗 aac-metrics](https://github.com/SogangCapstone10/aac-metrics) |
+| **Eng Metric & Filter** | AAC Metrics (English)<br>Sentence-BERT, SPIDEr-FL, FENSE 등의 영어 평가지표 모음.<br>그 중 **MACE**는 본 프로젝트의 필터링 모듈 핵심 알고리즘으로 응용 | [🔗 aac-metrics](https://github.com/SogangCapstone10/aac-metrics) |
 | **Common Metric** | **CLAIR-A**<br>LLM을 심판(Judge)으로 활용하여 한/영 캡션 모두에 적용 가능한 공통 평가 프레임워크 | [🔗 clair-a](https://github.com/SogangCapstone10/clair-a) |
 | **Kor Metric** | **Korean Evaluation Metrics**<br>한국어 캡션 품질 평가를 위한 KoBERT(문맥) 및 KoSimCSE(의미 유사도) | [🔗 KoBERT](https://github.com/SogangCapstone10/KoBERT)<br>[🔗 KoSimCSE-SKT](https://github.com/SogangCapstone10/KoSimCSE-SKT) |
 
