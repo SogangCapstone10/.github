@@ -34,7 +34,8 @@
 
 | 카테고리 | 기술/역할 | 레포지토리 |
 |:---:|---|---|
-| **Main Pipeline** | **GT 생성 파이프라인 & 시연 시스템**<br>AF3 생성 → MACE 필터링 → GPT 번역의 전 과정을 수행하는 메인 코드 및 시연 시스템 | [🔗 Auto-GT-Pipeline-Demo](https://github.com/SogangCapstone10/Auto-GT-Pipeline-Demo) |
+| **Main Pipeline** | **GT 생성 및 모델 평가 프레임워크**<br>1. **Auto GT Pipeline**: AF3 생성 → MACE 필터링 → GPT 번역으로 이어지는 자동 GT 생성 모듈<br>2. **Evaluation**: 구축된 데이터셋(최소한의 후처리 적용)을 기반으로, 내장된 평가지표를 통해 모델 성능을 검증하는 평가 모듈 | [🔗 Auto-GT-Pipeline-Demo](https://github.com/SogangCapstone10/Auto-GT-Pipeline-Demo) |
+| **System UI** | **웹 기반 시연 인터페이스**<br>사용자가 오디오 파일을 업로드하고 파이프라인의 전 과정(생성, 필터링, 번역)을 시각적으로 모니터링하며 테스트할 수 있는 프론트엔드 시스템 | [🔗 UI](https://github.com/SogangCapstone10/UI) |
 | **LALM** | **Audio Flamingo 3 (AF3)**<br>오디오 입력을 받아 1차 영어 캡션을 생성하는 핵심 모델 | [🔗 audio-flamingo](https://github.com/SogangCapstone10/audio-flamingo) |
 | **Eng Metric & Filter** | **AAC Metrics**<br>Sentence-BERT, SPIDEr-FL, FENSE 등의 영어 평가지표 모음.<br>그 중 **MACE**는 본 프로젝트의 필터링 모듈 핵심 알고리즘으로 응용 | [🔗 aac-metrics](https://github.com/SogangCapstone10/aac-metrics) |
 | **Common Metric** | **CLAIR-A**<br>LLM을 심판(Judge)으로 활용하여 한/영 캡션 모두에 적용 가능한 공통 평가 프레임워크 | [🔗 clair-a](https://github.com/SogangCapstone10/clair-a) |
