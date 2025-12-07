@@ -28,6 +28,37 @@
 2. **품질 검증 파이프라인:** MACE 및 CLAIR-A 등을 활용한 자동 필터링 및 평가 시스템 구축
 3. **한국어 데이터 확보:** 영어 캡션을 기반으로 의미적 정합성이 확보된 한국어 GT 생성 및 벤치마크 공개
 
+### 🐳 환경 설정
+본 프로젝트는 VAST AI 환경에서 AF3, CLAIR-A, AAC-metrics 등 다양한 모델과 평가지표를 구동하기 위해 Docker 환경을 사용합니다.
+제공된 **Dockerfile**은 프로젝트 실행에 필요한 모든 라이브러리 및 모델 환경이 사전에 구축되어 있는 이미지 빌드용 파일입니다. 아래 명령어를 통해 환경을 설정할 수 있습니다.
+# Docker 이미지 빌드
+docker build -t audio-benchmark-env .
+# 컨테이너 실행
+docker run -it --gpus all audio-benchmark-env
+
+### 🚀 사용 가이드 
+본 레포지토리는 크게 **데이터셋 구축(Generation)**과 모델 평가(Evaluation) 두 가지 기능을 제공합니다. 목적에 따라 아래의 가이드를 참고하여 실행해 주세요.
+1. 데이터셋 구축 (Dataset Construction)
+A. UI 없이 자동화된 구축 (pipeline.py)
+별도의 사용자 인터페이스(UI) 없이, 대량의 오디오 파일에 대해 자동으로 데이터셋을 구축하고 싶다면 이 코드를 사용하세요.
+기능: 오디오 입력 → 캡션 생성(AF3) → 필터링(MACE) → 번역(GPT) → 저장
+실행 방법:
+python pipeline.py --input_dir ./audio_data --output_dir ./results
+
+
+B. 시연 및 검증용 UI 시스템 (Ui_pipeline.py)
+Streamlit 기반의 UI를 통해 생성 과정을 시각적으로 확인하고, 생성된 캡션을 직접 검수하며 데이터셋을 구축하고 싶다면 이 코드를 사용하세요.
+특징: pipeline.py의 내부 로직을 import하여 동작하며, 웹 인터페이스를 제공합니다.
+실행 방법:
+streamlit run Ui_pipeline.py
+
+
+2. 모델 평가 (Model Evaluation)
+구축된 벤치마크를 활용하여 타 모델의 성능을 평가하고 싶다면 evaluation_model/ 폴더 내의 코드를 사용하세요.
+기능: 다양한 평가지표(MACE, CLAIR-A, SPIDEr-FL 등)를 활용하여 모델의 캡션 생성 성능을 정량적으로 평가합니다.
+참고: 본 평가 코드는 프로젝트에서 수행한 실험 기반으로 작성되었으며, 사용자가 원하는 평가지표를 선택하여 실행할 수 있도록 구성되어 있습니다.
+
+
 ### 🛠️ 핵심 레포지토리 및 기술 스택
 
 본 프로젝트는 각 기능별로 모듈화된 레포지토리를 운영하고 있습니다.
