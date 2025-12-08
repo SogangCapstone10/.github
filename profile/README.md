@@ -38,8 +38,10 @@
 | **System UI** | **웹 기반 시연 인터페이스**<br>사용자가 오디오 파일을 업로드하고 파이프라인의 전 과정(생성, 필터링, 번역)을 시각적으로 모니터링하며 테스트할 수 있는 프론트엔드 시스템 | [🔗 UI](https://github.com/SogangCapstone10/UI) |
 | **LALM** | **Audio Flamingo 3 (AF3)**<br>오디오 입력을 받아 1차 영어 캡션을 생성하는 핵심 모델 | [🔗 audio-flamingo](https://github.com/SogangCapstone10/audio-flamingo) |
 | **Eng Metric & Filter** | **AAC Metrics**<br>Sentence-BERT, SPIDEr-FL, FENSE 등의 영어 평가지표 모음.<br>그 중 **MACE**는 본 프로젝트의 필터링 모듈 핵심 알고리즘으로 응용 | [🔗 aac-metrics](https://github.com/SogangCapstone10/aac-metrics) |
+| **Translation** | **번역 모듈**<br>필터링 이후의 영어 캡션에 대한 번역 모듈 | [🔗 audio-flamingo](https://github.com/SogangCapstone10/translation) |
 | **Common Metric** | **CLAIR-A**<br>LLM을 심판(Judge)으로 활용하여 한/영 캡션 모두에 적용 가능한 공통 평가 프레임워크 | [🔗 clair-a](https://github.com/SogangCapstone10/clair-a) |
 | **Kor Metric** | **Korean Evaluation Metrics**<br>한국어 캡션 품질 평가를 위한 KoBERT(문맥) 및 KoSimCSE(의미 유사도) | [🔗 KoBERT](https://github.com/SogangCapstone10/KoBERT)<br>[🔗 KoSimCSE-SKT](https://github.com/SogangCapstone10/KoSimCSE-SKT) |
+
 
 ## 🧠 전체 아키텍처 (GT Generation Pipeline)
 
