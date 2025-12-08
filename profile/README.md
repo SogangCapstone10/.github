@@ -66,6 +66,8 @@
 | **고 운** | **Filtering & Evaluation** | • MACE 기반 오디오-텍스트 필터링 모듈 개발 및 임계값 실험<br>• 최종 벤치마크 모델 평가 실험 및 분석<br>• 최종 GT 생성 파이프라인 구축 |
 | **이시욱** | **Prompting & Demo** | • AF3(LALM) 프롬프트 엔지니어링 및 최적화 실험<br>• 시연 시스템 기능 구현 및 연동 지원 |
 
+## 📌 시연 영상
+https://github.com/user-attachments/assets/ecbf9a3a-0cd4-43ae-bc16-3c51d1d924fa
 ---
 <div align="center">
   <p>Department of Computer Science & Engineering, Sogang University</p>
